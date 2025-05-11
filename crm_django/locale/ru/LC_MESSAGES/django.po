@@ -1,0 +1,2 @@
+# django.po
+# Заглушка для файла crm_django/locale/ru/LC_MESSAGES/django.po
