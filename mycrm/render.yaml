@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: mycrm
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn mycrm.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: mycrm.settings
+      - key: SECRET_KEY
+        value: "your-secret-key"
+      - key: ALLOWED_HOSTS
+        value: "mycrm.onrender.com"  # или * для всех
+    autoDeploy: true
